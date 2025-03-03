@@ -1,8 +1,8 @@
 console.log("Side panel working");
-import config from "./config";
+import config from "./config.js";
 
 const SPREADSHEET_ID = config.SPREADSHEET_ID;
-const API_KEY = config.API_KEY;
+const API_KEY = config.GOOGLE_SHEETS_API_KEY;
 const RANGE = "A:A";
 
 async function fetchData() {
@@ -16,9 +16,10 @@ async function fetchData() {
 
   try {
     const response = await fetch(url);
+    console.log(response);
     const data = await response.json();
     if (data.values) {
-      data.values.map((row) => {
+      data.values.map((row, index) => {
         const spreadsheet_date = row[0].split(" ")[0];
         console.log(spreadsheet_date);
         console.log(today_date);
