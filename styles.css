@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+p, ul {
+    font-size: 16px;
+}
+
+#dateCount, #dataLen {
+    color: green;
+    font-weight: bold
+}
+
+progress {
+  width: 97%;
+  height: 20px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+progress::-webkit-progress-bar {
+  background-color: whitesmoke; /* Light gray background */
+}
+
+progress::-webkit-progress-value {
+  background-color: green; /* Green color for progress */
+}
+
+progress::-moz-progress-bar {
+  background-color: green; /* Green color for progress in Firefox */
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Form Tracker",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "sidePanel",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://sheets.googleapis.com/*"
+  ],
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "side_panel": {
+    "default_path": "side_panel.html"
+  }
+}
