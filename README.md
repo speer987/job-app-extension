@@ -5,7 +5,7 @@ This is a readme file that explains how the Job App Side Panel Extension works.
 
 I know how time-consuming applying to jobs can be, so I decided to make a side panel extension that persists across pages to aid in the job application process. This is what the interface looks like:
 
-!["image of interface"](interface.png)
+!["image of interface"](new_interface.png)
 
 The above image shows you how the interface is laid out. 
 
