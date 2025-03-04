@@ -1,11 +1,11 @@
 const copyMessageElement = document.getElementById("copyMessage");
-const copyContent = async () => {
+const copyContent = async (event) => {
+  const link = event.currentTarget.getAttribute("data-link");
+
   try {
-    await navigator.clipboard.writeText(
-      "https://www.linkedin.com/in/saarah-peer/"
-    );
+    await navigator.clipboard.writeText(link);
     // Show success message
-    copyMessageElement.innerHTML = "Copied!";
+    copyMessageElement.innerHTML = "Link was copied successfully!";
     copyMessageElement.style.color = "green"; // You can style it to match your design
 
     // Optionally, hide the message after a few seconds
@@ -13,7 +13,7 @@ const copyContent = async () => {
       copyMessageElement.innerHTML = ""; // Clear the message
     }, 2000); // Message disappears after 2 seconds
 
-    console.log("Content copied to clipboard");
+    console.log("Content copied to clipboard", link);
   } catch (err) {
     copyMessageElement.innerHTML = "Failed to copy content.";
     copyMessageElement.style.color = "red"; // Style for error message
@@ -22,4 +22,6 @@ const copyContent = async () => {
   }
 };
 
-document.querySelector(".btn").addEventListener("click", copyContent);
+document.querySelectorAll(".btn").forEach((button) => {
+  button.addEventListener("click", copyContent);
+});
