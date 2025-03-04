@@ -8,6 +8,7 @@
 
 p, ul {
     font-size: 16px;
+    line-height: 25px;
 }
 
 #dateCount, #dataLen {
@@ -34,3 +35,20 @@ progress::-webkit-progress-value {
 progress::-moz-progress-bar {
   background-color: green; /* Green color for progress in Firefox */
 }
+
+button {
+  font-size: 18px;
+  background-color: whitesmoke;
+  border: 0;
+  transition-duration: 0.2s;
+  border-radius: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+button:hover {
+  background-color: green;
+  color:whitesmoke;
+  font-size: 22px;
+}
+
