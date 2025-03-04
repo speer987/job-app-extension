@@ -12,8 +12,17 @@
   "background": {
     "service_worker": "service_worker.js"
   },
+  "icons": {
+    "16": "circle-check.png",
+    "48": "circle-check.png",
+    "128": "circle-check.png"
+  },
   "action": {
-    "default_icon": "circle-check.png"
+    "default_icon": {
+      "16": "circle-check.png",
+      "48": "circle-check.png",
+      "128": "circle-check.png"
+    }
   },
   "side_panel": {
     "default_path": "side_panel.html"
