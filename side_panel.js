@@ -34,6 +34,19 @@ async function fetchData() {
       const progressBarDaily = document.getElementById("progressBarDaily");
       progressBarDaily.value = date_count;
 
+      if (date_count >= 15) {
+        const content = document.getElementById("content");
+        content.innerHTML = `
+        <div id="center">
+          <div id="spacing-div"></div>
+          <div id="cta-text">
+            <h2 id="purple-text">You applied to 15 jobs or more today!</h2>
+            <p>Take a break! You deserve it.</p>
+          </div>
+          <img id="break-image" src="undraw_relaxed-reading.svg">
+        </div>`;
+      }
+
       const progressBarTotal = document.getElementById("progressBarTotal");
       progressBarTotal.value = data_len;
     } else {
