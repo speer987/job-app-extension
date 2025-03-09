@@ -5,6 +5,8 @@ const SPREADSHEET_ID = config.SPREADSHEET_ID;
 const API_KEY = config.GOOGLE_SHEETS_API_KEY;
 const RANGE = "A:A";
 
+let milestones_current = 0;
+
 async function fetchData() {
   console.log("yes");
   const url = `https://sheets.googleapis.com/v4/spreadsheets/${SPREADSHEET_ID}/values/${RANGE}?key=${API_KEY}`;
@@ -29,7 +31,6 @@ async function fetchData() {
       });
       const data_len = data.values.length - 1;
       document.getElementById("dateCount").textContent = date_count;
-      document.getElementById("dataLen").textContent = data_len;
 
       const progressBarDaily = document.getElementById("progressBarDaily");
       progressBarDaily.value = date_count;
@@ -48,7 +49,21 @@ async function fetchData() {
       }
 
       const progressBarTotal = document.getElementById("progressBarTotal");
-      progressBarTotal.value = data_len;
+      progressBarTotal.value = data_len % 1000;
+      document.getElementById("dataLen").textContent = data_len;
+
+      const milestones_reached = Math.floor(data_len / 1000);
+      for (
+        let count = milestones_current;
+        count < milestones_reached;
+        count++
+      ) {
+        let milestone_circle = document.createElement("span");
+        milestone_circle.className = "milestone_circ";
+        milestone_circle.textContent = "1K";
+        document.getElementById("milestones").appendChild(milestone_circle);
+      }
+      milestones_current = milestones_reached;
     } else {
       console.error("No data found.");
     }
